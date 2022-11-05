@@ -19,22 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "home",
+        'title' => 'home',
     ]);
 });
 
 Route::get('/home', function () {
     return view('home', [
-        "title" => "home",
+        'title' => 'home',
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
-        "title" => "about",
-        "name" => "Muhammad Ardiansyah Hermawan",
-        "email" => "asw@gmail.com",
-        "image" => "dataku.jpg"
+        'title' => 'about',
+        'name' => 'Muhammad Ardiansyah Hermawan',
+        'email' => 'asw@gmail.com',
+        'image' => 'dataku.jpg'
     ]);
 });
 
@@ -44,7 +44,7 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
-        'name' => $category->name,
+        'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name
     ]);
